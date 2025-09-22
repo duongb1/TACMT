@@ -74,7 +74,7 @@ class VGDataset(Dataset):
             self.dataset_root = osp.join(self.data_root, 'Flickr30k')
             self.im_dir = osp.join(self.dataset_root, 'flickr30k-images')
         elif self.dataset == 'sarvg':
-            self.dataset_root = osp.join(self.data_root, 'sarvg')
+            self.dataset_root = osp.join(self.data_root, '')
             self.im_dir = osp.join(self.dataset_root, 'images')
         elif self.dataset == 'rsvg':
             self.dataset_root = osp.join(self.data_root, 'rsvg')
