@@ -176,7 +176,7 @@ def main(args):
 
     output_dir = Path(args.output_dir)
     assert args.checkpoint
-    checkpoint = torch.load(args.checkpoint, map_location='cpu')
+    checkpoint = torch.load(args.checkpoint, map_location='cpu', weights_only=False)
     model_without_ddp.load_state_dict(checkpoint['model'])
 
     test_stats, test_acc, test_time = evaluate(
@@ -208,7 +208,7 @@ def main(args):
         print(len(gt_info_path))
         print(len(pred_box_list_convert))
 
-        label_data = torch.load(gt_info_path)
+        label_data = torch.load(gt_info_path, weights_only=False)
         for i in tqdm(range(len(label_data))):
             name = label_data[i][0]
             bbox = label_data[i][1]

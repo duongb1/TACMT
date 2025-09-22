@@ -56,7 +56,7 @@ class SARVG(nn.Module):
                 #     print(f"Skipping {k} due to size mismatch or not found in the checkpoint.")
             module.load_state_dict(update_weights, strict=False)
 
-        weights = torch.load(weights_path, map_location='cpu')['ema']['module']
+        weights = torch.load(weights_path, map_location='cpu', weights_only=False)['ema']['module']
         load_weights(self.backbone[0].body, prefix='backbone', weights=weights)
         load_weights(self.trans_encoder.encoder, prefix='encoder', weights=weights)
 

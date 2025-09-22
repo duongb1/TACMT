@@ -99,7 +99,7 @@ class VGDataset(Dataset):
         for split in splits:
             imgset_file = '{0}_{1}.pth'.format(self.dataset, split)
             imgset_path = osp.join(dataset_split_root, imgset_file)
-            self.imgset_info += torch.load(imgset_path, map_location="cpu")
+            self.imgset_info += torch.load(imgset_path, map_location="cpu", weights_only=False)
 
         # process the image set info
         if self.dataset == 'flickr':
