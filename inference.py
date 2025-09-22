@@ -97,13 +97,13 @@ def get_args_parser():
     parser.add_argument('--other_loss_coefs', default={}, type=float)
 
     # dataset parameters
-    parser.add_argument('--data_root', default='./data/')
-    parser.add_argument('--split_root', default='./split/data/')
+    parser.add_argument('--data_root', default='/kaggle/input/sarvg1/')
+    parser.add_argument('--split_root', default='/kaggle/input/sarvg1/')
     parser.add_argument('--dataset', default='sarvg')
     parser.add_argument('--test_split', default='val')
     parser.add_argument('--img_size', default=512, type=int)
     parser.add_argument('--cache_images', action='store_true')
-    parser.add_argument('--output_dir', default='work_dirs/',
+    parser.add_argument('--output_dir', default='./',
                         help='path where to save, empty for no saving')
     parser.add_argument('--save_pred_path', default='')
     parser.add_argument('--device', default='cuda',

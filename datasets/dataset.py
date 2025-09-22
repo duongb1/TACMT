@@ -43,7 +43,7 @@ SUPPORTED_DATASETS = {
 
 
 class VGDataset(Dataset):
-    def __init__(self, data_root, split_root='data', dataset='referit', transforms=[],
+    def __init__(self, data_root, split_root='/kaggle/input/sarvg1/images/', dataset='referit', transforms=[],
                  debug=False, test=False, split='train', max_query_len=128,
                  bert_mode='bert-base-uncased', cache_images=False):
         super(VGDataset, self).__init__()
