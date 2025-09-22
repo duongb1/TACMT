@@ -98,7 +98,7 @@ def get_args_parser():
     parser.add_argument('--test_split', default='val')
     parser.add_argument('--img_size', default=512)
     parser.add_argument('--cache_images', action='store_true')
-    parser.add_argument('--output_dir', default='work_dirs/',
+    parser.add_argument('--output_dir', default='./',
                         help='path where to save, empty for no saving')
     parser.add_argument('--save_pred_path', default='')
     parser.add_argument('--device', default='cuda',
