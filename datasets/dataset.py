@@ -43,7 +43,7 @@ SUPPORTED_DATASETS = {
 
 
 class VGDataset(Dataset):
-    def __init__(self, data_root, split_root='/kaggle/input/sarvg1/images/', dataset='referit', transforms=[],
+    def __init__(self, data_root, split_root='/kaggle/input/sarvg1/', dataset='referit', transforms=[],
                  debug=False, test=False, split='train', max_query_len=128,
                  bert_mode='bert-base-uncased', cache_images=False):
         super(VGDataset, self).__init__()
@@ -74,8 +74,8 @@ class VGDataset(Dataset):
             self.dataset_root = osp.join(self.data_root, 'Flickr30k')
             self.im_dir = osp.join(self.dataset_root, 'flickr30k-images')
         elif self.dataset == 'sarvg':
-            self.dataset_root = osp.join(self.data_root, '')
-            self.im_dir = osp.join(self.dataset_root, 'images')
+            self.dataset_root = self.data_root  # data_root already points to /kaggle/input/sarvg1/images/
+            self.im_dir = self.data_root       # Same as dataset_root for sarvg
         elif self.dataset == 'rsvg':
             self.dataset_root = osp.join(self.data_root, 'rsvg')
             self.im_dir = osp.join(self.dataset_root, 'images')
@@ -83,7 +83,7 @@ class VGDataset(Dataset):
             self.dataset_root = osp.join(self.data_root, 'other')
             self.im_dir = osp.join(self.dataset_root, 'images', 'mscoco', 'images', 'train2014')
 
-        dataset_split_root = osp.join(self.split_root, self.dataset)
+        dataset_split_root = self.split_root if self.dataset == 'sarvg' else osp.join(self.split_root, self.dataset)
         valid_splits = SUPPORTED_DATASETS[self.dataset]['splits']
 
         if split not in valid_splits:
