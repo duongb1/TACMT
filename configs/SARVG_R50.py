@@ -11,7 +11,7 @@ backbone='resnet50'
 # bbox_loss_coef=5
 # giou_loss_coef=5
 freeze_modules=['backbone', 'bert']
-load_weights_path='kaggle/working/rtdetr_r50vd_2x_coco_objects365_from_paddle.pth'
+load_weights_path='/kaggle/working/rtdetr_r50vd_2x_coco_objects365_from_paddle.pth'
 
 
 model_config = dict(
