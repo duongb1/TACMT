@@ -1,7 +1,7 @@
 dataset='sarvg'
-data_root='path to your file'
-split_root='path to your file'
-output_dir='./work_dirs/exp1'
+data_root='/kaggle/input/sarvg1/images/'
+split_root='/kaggle/input/sarvg1/'
+output_dir='./'
 img_size=512
 epochs=90
 lr_drop=60
@@ -11,7 +11,7 @@ backbone='resnet50'
 # bbox_loss_coef=5
 # giou_loss_coef=5
 freeze_modules=['backbone', 'bert']
-load_weights_path='./pretrained/rtdetr_r50vd_2x_coco_objects365_from_paddle.pth'
+load_weights_path='./rtdetr_r50vd_2x_coco_objects365_from_paddle.pth'
 
 
 model_config = dict(
