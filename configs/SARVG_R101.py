@@ -1,7 +1,7 @@
 dataset='sarvg'
-data_root='path to your file'
-split_root='path to your file'
-output_dir='./work_dirs/exp2'
+data_root='/kaggle/input/sarvg1/images/'
+split_root='/kaggle/input/sarvg1/'
+output_dir='./'
 img_size=512
 epochs=90
 lr_drop=60
